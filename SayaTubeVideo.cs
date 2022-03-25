@@ -15,6 +15,10 @@ namespace tpmod5_1302204075
         {
             Random random = new Random();
             this.id = random.Next(10000, 99999);
+            if (title == "")
+                throw new NullReferenceException("title tidak boleh null");
+            if (title.Length > 100)
+                throw new Exception("panjang text maksimal 100");
             this.title = title;
             this.PlayCount = 0;
         }
